@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>        
+        <!-- META SECTION -->
+        <title>HiH e-learning platform</title>            
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <!-- END META SECTION -->
+        
+        <!-- CSS INCLUDE -->        
+        <link rel="stylesheet" type="text/css" id="theme" href="static/css/theme-default.css"/>
+        <!-- EOF CSS INCLUDE -->                                      
+    </head>
+    <body>
+        <!-- START PAGE CONTAINER -->
+       {% include './dashboard/navabar.html' %}
+                <!-- END X-NAVIGATION -->
+            </div>
+            <!-- END PAGE SIDEBAR -->
+            
+            <!-- PAGE CONTENT -->
+                <!-- END X-NAVIGATION VERTICAL -->                     
+                
+                <!-- START BREADCRUMB -->
+                <!-- END BREADCRUMB -->                                                
+                
+                <!-- START CONTENT FRAME -->
+                <div class="content-frame">   
+                    
+                    <!-- START CONTENT FRAME TOP -->
+                    <div class="content-frame-top">                        
+                        <div class="page-title">
+                            
+                            <h2><span class="fa fa-book"></span>Courses</h2>
+                        </div>                                      
+                       <br><br>
+                    
+                    <!-- START CONTENT FRAME RIGHT -->                              
+                        <h4>Tags:</h4>
+                        <ul class="list-tags">
+                            <li><a href="#"><span class="fa fa-tag"></span> amet</a></li>
+                            <li><a href="#"><span class="fa fa-tag"></span> rutrum</a></li>
+                            <li><a href="#"><span class="fa fa-tag"></span> nunc</a></li>
+                            <li><a href="#"><span class="fa fa-tag"></span> tempor</a></li>
+                            <li><a href="#"><span class="fa fa-tag"></span> eros</a></li>
+                            <li><a href="#"><span class="fa fa-tag"></span> suspendisse</a></li>
+                            <li><a href="#"><span class="fa fa-tag"></span> dolor</a></li>
+                        </ul>
+                    </div>
+                    <!-- END CONTENT FRAME RIGHT -->
+                
+                    <!-- START CONTENT FRAME BODY -->
+                    
+                        
+                        <div class="gallery" id="links">
+                            <a class="gallery-item" href="/outline">
+                                <div class="image">                              
+                                    <img src="data:image/jpeg;base64,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" alt="Nature Image 1"/>                                        
+                                    <ul class="gallery-item-controls">
+                                        <li><label class="check"><input type="checkbox" class="icheckbox"/></label></li>
+                                        <li><span class="gallery-item-remove"><i class="fa fa-times"></i></span></li>
+                                    </ul>                                                                    
+                                </div>
+                                <div class="meta">
+                                    <strong>ACCA</strong>
+                                    <span>Description</span>
+                                    
+                                </div>                                
+                            </a>
+
+                            <a class="gallery-item" href="static/assets/images/gallery/music-1.jpg">
+                                <div class="image">
+                                    <img src="https://sdtimes.com/wp-content/uploads/2017/10/IMG_1463.png" alt="Music picture 1"/>    
+                                    <ul class="gallery-item-controls">
+                                        <li><label class="check"><input type="checkbox" class="icheckbox"/></label></li>
+                                        <li><span class="gallery-item-remove"><i class="fa fa-times"></i></span></li>
+                                    </ul>                                                                    
+                                </div>
+                                <div class="meta">
+                                    <strong>Software Engineering</strong>
+                                    <span>description</span>
+                                </div>                                
+                            </a>                            
+
+                            <a class="gallery-item" href="static/assets/images/gallery/girls-1.jpg" title="Girls Image 1" data-gallery>
+                                <div class="image">
+                                    <img src="https://shots.jotform.com/steve/2015-06-22_1901.png" alt="Girls Image 1"/>                                        
+                                    <ul class="gallery-item-controls">
+                                        <li><label class="check"><input type="checkbox" class="icheckbox"/></label></li>
+                                        <li><span class="gallery-item-remove"><i class="fa fa-times"></i></span></li>
+                                    </ul>                                                                    
+                                </div>
+                                <div class="meta">
+                                    <strong>Data Analysis</strong>
+                                    <span>Description</span>
+                                </div>                                
+                            </a>
+                            <a class="gallery-item" href="static/assets/images/gallery/girls-1.jpg" title="Girls Image 1" data-gallery>
+                                <div class="image">
+                                    <img src="https://www.oracle.com/webfolder/technetwork/tutorials/obe/db/12c/r1/poster/OUTPUT_poster/img/cdb_large.png" alt="Girls Image 1" />
+                                    <ul class="gallery-item-controls">
+                                        <li><label class="check"><input type="checkbox" class="icheckbox" /></label></li>
+                                        <li><span class="gallery-item-remove"><i class="fa fa-times"></i></span></li>
+                                    </ul>
+                                </div>
+                                <div class="meta">
+                                    <strong>Oracle</strong>
+                                    <span>Description</span>
+                                </div>
+                            </a>
+
+
+                            
+
+                           
+                             
+                        <ul class="pagination pagination-sm pull-right push-down-20 push-up-20">
+                            <li class="disabled"><a href="#">«</a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>                                    
+                            <li><a href="#">»</a></li>
+                        </ul>
+                    </div>       
+                    <!-- END CONTENT FRAME BODY -->
+                </div>               
+                <!-- END CONTENT FRAME -->
+                                
+                
+            </div>            
+            <!-- END PAGE CONTENT -->
+        </div>
+        <!-- END PAGE CONTAINER -->
+        
+        <!-- BLUEIMP GALLERY -->
+        <!-- <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+            <div class="slides"></div>
+            <h3 class="title"></h3>
+            <a class="prev">‹</a>
+            <a class="next">›</a>
+            <a class="close">×</a>
+            <a class="play-pause"></a>
+            <ol class="indicator"></ol>
+        </div>      --> 
+        <!-- END BLUEIMP GALLERY -->
+        
+        <!-- MESSAGE BOX-->
+        <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+            <div class="mb-container">
+                <div class="mb-middle">
+                    <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
+                    <div class="mb-content">
+                        <p>Are you sure you want to log out?</p>                    
+                        <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
+                    </div>
+                    <div class="mb-footer">
+                        <div class="pull-right">
+                            <a href="pages-login.html" class="btn btn-success btn-lg">Yes</a>
+                            <button class="btn btn-default btn-lg mb-control-close">No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END MESSAGE BOX-->
+
+        <!-- START PRELOADS -->
+        <audio id="audio-alert" src="static/audio/alert.mp3" preload="auto"></audio>
+        <audio id="audio-fail" src="static/audio/fail.mp3" preload="auto"></audio>
+        <!-- END PRELOADS -->              
+        
+    <!-- START SCRIPTS -->
+        <!-- START PLUGINS -->
+        <script type="text/javascript" src="static/js/plugins/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="static/js/plugins/jquery/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="static/js/plugins/bootstrap/bootstrap.min.js"></script>        
+        <!-- END PLUGINS -->
+
+        <!-- START THIS PAGE PLUGINS-->        
+        <script type='text/javascript' src='static/js/plugins/icheck/icheck.min.js'></script>
+        <script type="text/javascript" src="static/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+        
+        <!-- <script type="text/javascript" src="static/js/plugins/blueimp/jquery.blueimp-gallery.min.js"></script> -->
+        <script type="text/javascript" src="static/js/plugins/dropzone/dropzone.min.js"></script>
+        <script type="text/javascript" src="static/js/plugins/icheck/icheck.min.js"></script>
+        <!-- END THIS PAGE PLUGINS-->        
+
+        <!-- START TEMPLATE -->
+        <script type="text/javascript" src="static/js/settings.js"></script>
+        
+        <script type="text/javascript" src="static/js/plugins.js"></script>        
+        <script type="text/javascript" src="static/js/actions.js"></script>        
+        <!-- END TEMPLATE -->
+
+        <script>            
+            document.getElementById('links').onclick = function (event) {
+                event = event || window.event;
+                var target = event.target || event.srcElement;
+                var link = target.src ? target.parentNode : target;
+                var options = {index: link, event: event,onclosed: function(){
+                        setTimeout(function(){
+                            $("body").css("overflow","");
+                        },200);                        
+                    }};
+                var links = this.getElementsByTagName('a');
+                blueimp.Gallery(links, options);
+            };
+        </script>        
+        
+    <!-- END SCRIPTS -->         
+    </body>
+</html>
+
+
+
+
+
+

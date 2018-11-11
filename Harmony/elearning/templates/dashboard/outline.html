@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>        
+        <!-- META SECTION -->
+        <title>HiH e-learning platform</title>            
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <!-- END META SECTION -->
+        
+        <!-- CSS INCLUDE -->        
+        <link rel="stylesheet" type="text/css" id="theme" href="{{url_for('static',filename='css/theme-default.css')}}"/>
+        <!-- EOF CSS INCLUDE -->                                      
+    </head>
+    <body>
+        <!-- START PAGE CONTAINER -->
+       {% include './dashboard/navabar.html' %}
+                <!-- END X-NAVIGATION -->
+            </div>
+            <!-- END PAGE SIDEBAR -->
+            
+            <!-- PAGE CONTENT -->
+                <!-- END X-NAVIGATION VERTICAL -->                     
+                
+                <!-- START BREADCRUMB -->
+                <!-- END BREADCRUMB -->                                                
+                
+                <!-- START CONTENT FRAME -->
+                <div class="content-frame">   
+                    
+                    <!-- START CONTENT FRAME TOP -->
+                    <div class="content-frame-top">                        
+                        <div class="page-title">
+                            
+                            <h2><span class="fa fa-book"></span>Courses</h2>
+                        </div>                                      
+                       <br><br>
+                    
+                    <!-- START CONTENT FRAME RIGHT -->                              
+                    <div class="page-content-wrap">
+                    
+                        <div class="row">
+                            <div class="col-md-12">
+                    
+                                <!-- START DEFAULT DATATABLE -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Default</h3>
+                                        <ul class="panel-controls">
+                                            <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
+                                            <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                                            <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="panel-body">
+                                        <table class="table datatable">
+                                            <thead>
+
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Instructor</th>
+                                                    <th>Courses</th>
+                                                    <th>Description</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                                                            
+                                            {% for class in lectures %}
+
+                                                <tr>
+                                                    <td>{{class.Topic}}</td>
+                                                    <td>{{class.creator}}</td>
+                                                    <td>{{class.courses_name}}</td>
+                                                    <td>{{class.desriptions}}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                       Start
+                                        </button>
+                                    </td>
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg" role="document" style="width: 80%">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">ACCA Lecture</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div style="width 300px">
+                                                        {{class.content|safe}}
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                    
+                                                </tr>
+                                    {% endfor %}
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- END DEFAULT DATATABLE -->
+                    
+                        
+        <!-- END PAGE CONTAINER -->
+       
+        
+        <!-- Modal -->
+       
+        
+
+        <!-- BLUEIMP GALLERY -->
+        <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+            <div class="slides"></div>
+            <h3 class="title"></h3>
+            <a class="prev">‹</a>
+            <a class="next">›</a>
+            <a class="close">×</a>
+            <a class="play-pause"></a>
+            <ol class="indicator"></ol>
+        </div>      
+        <!-- END BLUEIMP GALLERY -->
+        
+        <!-- MESSAGE BOX-->
+       {% include './dashboard/msgbox.html' %}
+        <!-- END MESSAGE BOX-->
+
+        <!-- START PRELOADS -->
+        <audio id="audio-alert" src="{{url_for('static',filename='audio/alert.mp3')}}" preload="auto"></audio>
+        <audio id="audio-fail" src="{{url_for('static',filename='audio/fail.mp3')}}" preload="auto"></audio>
+        <!-- END PRELOADS -->              
+        
+    <!-- START SCRIPTS -->
+        <!-- START PLUGINS -->
+        <script type="text/javascript" src="{{url_for('static',filename='js/plugins/jquery/jquery.min.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static',filename='js/plugins/jquery/jquery-ui.min.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static',filename='js/plugins/bootstrap/bootstrap.min.js')}}"></script>        
+        <!-- END PLUGINS -->
+
+        <!-- START THIS PAGE PLUGINS-->        
+        <script type='text/javascript' src="{{url_for('static', filename='js/plugins/icheck/icheck.min.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static',filename='js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js')}}"></script>
+        
+        <script type="text/javascript" src="{{url_for('static',filename='js/plugins/blueimp/jquery.blueimp-gallery.min.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static',filename='js/plugins/dropzone/dropzone.min.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static',filename='js/plugins/icheck/icheck.min.js')}}"></script>
+        <!-- END THIS PAGE PLUGINS-->        
+
+        <!-- START TEMPLATE -->
+        <script type="text/javascript" src="{{url_for('static',filename='js/settings.js')}}"></script>
+        
+        <script type="text/javascript" src="{{url_for('static',filename='js/plugins.js')}}"></script>        
+        <script type="text/javascript" src="{{url_for('static',filename='js/actions.js')}}"></script>        
+        <!-- END TEMPLATE -->
+        <script type="text/javascript" src="{{url_for('static',filename='js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js')}}"></script>
+        
+        <script type="text/javascript" src="{{url_for('static',filename='js/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+        <!-- END PAGE PLUGINS -->
+
+        <script>            
+            document.getElementById('links').onclick = function (event) {
+                event = event || window.event;
+                var target = event.target || event.srcElement;
+                var link = target.src ? target.parentNode : target;
+                var options = {index: link, event: event,onclosed: function(){
+                        setTimeout(function(){
+                            $("body").css("overflow","");
+                        },200);                        
+                    }};
+                var links = this.getElementsByTagName('a');
+                blueimp.Gallery(links, options);
+            };
+        </script>        
+        
+    <!-- END SCRIPTS -->         
+    </body>
+</html>
+
+
+
+
+
+

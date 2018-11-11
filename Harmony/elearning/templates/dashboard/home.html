@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>        
+        <!-- META SECTION -->
+        <title>HiH e-learning platform</title>            
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <link rel="icon" href="{{url_for('static',filename='img/harmony.png')}}" type="image/x-icon" />
+        <!-- END META SECTION -->
+        
+        <!-- CSS INCLUDE -->        
+        <link rel="stylesheet" type="text/css" id="theme" href="{{ url_for('static', filename='css/theme-default.css') }}"/>
+        <!-- EOF CSS INCLUDE -->                                    
+    </head>
+
+    {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <script>
+      var messages = {{ messages | safe }};
+      for (var i=0; i<messages.length; i++) {
+        alert(messages[i]);
+      }
+    </script>
+  {% endif %}
+{% endwith %} 
+    <body>
+        <!-- START PAGE CONTAINER -->
+        {% include './dashboard/navabar.html' %}
+
+    
+<hr>
+
+    <div class="row">
+      
+        
+        {% for course in courses %}
+        <div class="col-md-4">
+        
+            <!-- START VISITORS BLOCK -->
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+
+                    <a href="{{url_for('dash.outline',course_name=course.Name)}}">
+                        <div class="panel-title-box">
+
+                            <h3>{{course.Name}}</h3>
+                            <span>{{desriptionsLectures}}</span>
+                            
+                        
+                        <ul class="panel-controls" style="margin-top: 2px;">
+                            <li><a href="#" class="panel-fullscreen"><span class="fa fa-expand"></span></a></li>
+                            <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-cog"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span> Collapse</a></li>
+                                    <li><a href="#" class="panel-remove"><span class="fa fa-times"></span> Remove</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        </div>
+                        <div class="panel-body padding-0">
+                            <img style="height: 200px; width: 360px;" src="{{course.image}}" alt="">
+                        </div>
+                    </a>
+                </div>
+            </div>
+                
+        </div>
+        {% endfor %}
+            <!-- END VISITORS BLOCK -->
+
+
+        
+
+                {% include './dashboard/msgbox.html' %}
+
+        
+
+
+    
+        <!-- END MESSAGE BOX-->
+
+        <!-- START PRELOADS -->
+        <audio id="audio-alert" src="{{url_for('static', filename='audio/alert.mp3')}}" preload="auto"></audio>
+        <audio id="audio-fail" src="{{url_for('static',filename='audio/fail.mp3')}}" preload="auto"></audio>
+        <!-- END PRELOADS -->                  
+        
+    <!-- START SCRIPTS -->
+        <!-- START PLUGINS -->
+        <script type="text/javascript" src="{{url_for('static',filename='js/plugins/jquery/jquery.min.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static',filename='js/plugins/jquery/jquery-ui.min.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static',filename='js/plugins/bootstrap/bootstrap.min.js')}}"></script>        
+        <!-- END PLUGINS -->
+
+        <!-- START THIS PAGE PLUGINS-->        
+        <script type='text/javascript' src="{{url_for('static',filename='js/plugins/icheck/icheck.min.js')}}"></script>        
+        <script type="text/javascript" src="{{url_for('static',filename='js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static',filename='js/plugins/scrolltotop/scrolltopcontrol.js')}}"></script>
+        
+        <script type="text/javascript" src="{{url_for('static',filename='js/plugins/morris/raphael-min.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static',filename='js/plugins/morris/morris.min.js')}}"></script>       
+        <script type="text/javascript" src="{{url_for('static',filename='js/plugins/rickshaw/d3.v3.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static',filename='js/plugins/rickshaw/rickshaw.min.js')}}"></script>
+        <script type='text/javascript' src="{{url_for('static',filename='js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
+        <script type='text/javascript' src="{{url_for('static',filename='js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}></script>"                
+        <script type='text/javascript' src="{{url_for('static',filename='js/plugins/bootstrap/bootstrap-datepicker.js')}}"></script>                
+        <script type="text/javascript" src="{{url_for('static',filename='js/plugins/owl/owl.carousel.min.js')}}"></script>                 
+        
+        <script type="text/javascript" src="{{url_for('static',filename='js/plugins/moment.min.js')}}"></script>
+        <script type="text/javascript" src="../static/js/plugins/daterangepicker/daterangepicker.js"></script>
+        <!-- END THIS PAGE PLUGINS-->        
+
+        <!-- START TEMPLATE -->
+        <script type="text/javascript" src="{{url_for('static',filename='js/settings.js')}}"></script>
+        
+        <script type="text/javascript" src="{{url_for('static',filename='js/plugins.js')}}"></script>        
+        <script type="text/javascript" src="{{url_for('static',filename='js/actions.js')}}"></script>
+        
+        <script type="text/javascript" src="{{url_for('static',filename='js/demo_dashboard.js')}}"></script>
+        <!-- END TEMPLATE -->
+    <!-- END SCRIPTS -->         
+    </body>
+</html>
